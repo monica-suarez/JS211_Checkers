@@ -1,10 +1,10 @@
 {
-  "name": "pig-latin",
+  "name": "Checkers",
   "version": "1.0.0",
-  "description": "Practicing String Manipulation with the illysay amegay, Pig Latin!",
+  "description": "Aggghhh....Checkers!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AustinCodingAcademy/JS211_PigLatinProject.git"
+    "url": "git+https://github.com/AustinCodingAcademy/JS211_Checkers.git"
   },
   "scripts": {
     "lint": "htmllint {*.html,./**/*.html} && stylelint ./**/*.css && eslint .",
@@ -15,9 +15,9 @@
   },
   "author": "Clayton Berger",
   "bugs": {
-    "url": "https://github.com/AustinCodingAcademy/JS211_PigLatinProject/issues"
+    "url": "https://github.com/AustinCodingAcademy/JS211_Checkers/issues"
   },
-  "homepage": "https://github.com/AustinCodingAcademy/JS211_PigLatinProject#readme",
+  "homepage": "https://github.com/AustinCodingAcademy/JS211_Checkers#readme",
   "dependencies": {
     "eslint": "^3.19.0",
     "functional-javascript-workshop": "^1.0.6",
