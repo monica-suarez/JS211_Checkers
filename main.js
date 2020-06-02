@@ -11,11 +11,27 @@ const rl = readline.createInterface({
 function Checker() {
   // Your code here
 }
+let whiteCheckers = [[0, 1], [0, 3], [0, 5], [0, 7],
+[1, 0], [1, 2], [1, 4], [1, 6],
+[2, 1], [2, 3], [2, 5], [2, 7]];
+let blackCheckers = [[5, 0], [5, 2], [5, 4], [5, 6],
+[6, 1], [6, 3], [6, 5], [6, 7],
+[7, 0], [7, 2], [7, 4], [7, 6]];
+
+class Checkers{
+  constructor(location, color){
+    this.location = location;
+    this.color = color;
+  }
+}
+
 
 class Board {
   constructor() {
-    this.grid = []
+    this.grid = [];
+    this.checkers = [];
   }
+
   // method that creates an 8x8 array, filled with null values
   createGrid() {
     // loop to create the 8 rows
@@ -51,8 +67,19 @@ class Board {
     }
     console.log(string);
   }
-
-  // Your code here
+  //creating checkers
+  createWhitePiece = (whiteCheckers) =>{
+    for(let i=0; i <whiteCheckers.length; i++){
+      this.grid(whiteCheckers[i][0,1]) = whiteCheckers[i];
+      this.checkers.push(whiteCheckers[i]);
+    }
+  }
+  createBlackPiece = (blackCheckers)  =>{
+    for(let i=0; i <blackCheckers.length; i++){
+      this.grid(blackCheckers[i][0,1]) = blackCheckers[i];
+      this.checkers.push(blackCheckers[i]);
+    }
+  }
 }
 
 class Game {
