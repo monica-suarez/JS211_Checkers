@@ -17,9 +17,7 @@ class Checker{
     }
   }
 }
-// function checker() {
 
-// }
 
 
 
@@ -90,7 +88,14 @@ class Board {
     }
   }
   selectChecker(row, column){
+    console.log(this.grid[row][column]);
     return this.grid[row][column];
+  }
+  killChecker(position) {
+    this.checkers.splice(position, 1)
+    // this.board.grid.position = null;
+    // let position = [row,column];
+    // this.selectChecker(position) = indexOf()
   }
 }
 
@@ -104,9 +109,26 @@ class Game {
     this.board.createBlackPiece();
   }
   moveChecker(whichPiece, toWhere){
-    
+    let startingRow = parseInt(whichPiece[0]);
+    let startingColumn= parseInt(whichPiece[1]);
+    let endingRow = parseInt(toWhere[0]);
+    let endingColumn = parseInt(toWhere[1]);
+    let checker = this.board.selectChecker([startingRow], [startingColumn]);
+    this.board.grid[endingRow][endingColumn] = checker;
+    this.board.grid[startingRow][startingColumn] = null;
+    if (Math.abs(whichPiece[0] - toWhere[0]) == 2) {
+      const midPointRow = (parseInt(whichPiece[0]) + parseInt(toWhere[0])) / 2;
+      console.log(midPointRow + "test one")
+      const midPointColumn = (parseInt(whichPiece[1]) + parseInt(toWhere[1])) / 2;
+      console.log(midPointColumn + "test two")
+      let killPosition = this.board.selectChecker(midPointRow, midPointColumn);
+      this.board.killChecker(killPosition);
+      this.board.grid[midPointRow][midPointColumn] = null;
+    }
   }
 }
+
+
 
 function getPrompt() {
   game.board.viewGrid();
