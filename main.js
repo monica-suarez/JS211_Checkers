@@ -69,8 +69,8 @@ class Board {
   //creating checkers
   createWhitePiece(){
     let whitePositions = [[0, 1], [0, 3], [0, 5], [0, 7],
-    [1, 0], [1, 2], [1, 4], [1, 6],
-    [2, 1], [2, 3], [2, 5], [2, 7]];
+      [1, 0], [1, 2], [1, 4], [1, 6],
+      [2, 1], [2, 3], [2, 5], [2, 7]];
     let whiteChecker = new Checker("white");
     for(let i=0; i <whitePositions.length; i++){
       this.grid[whitePositions[i][0]][whitePositions[i][1]] = whiteChecker;
@@ -79,8 +79,8 @@ class Board {
   }
   createBlackPiece(){
     let blackPositions = [[5, 0], [5, 2], [5, 4], [5, 6],
-    [6, 1], [6, 3], [6, 5], [6, 7],
-    [7, 0], [7, 2], [7, 4], [7, 6]];
+      [6, 1], [6, 3], [6, 5], [6, 7],
+      [7, 0], [7, 2], [7, 4], [7, 6]];
     let blackChecker = new Checker("black");
     for(let i=0; i <blackPositions.length; i++){
       this.grid[blackPositions[i][0]][blackPositions[i][1]] = blackChecker;
